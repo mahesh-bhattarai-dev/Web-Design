@@ -150,7 +150,7 @@
     setupDemoPayment();
     updateCartCount();
     const toggle = document.querySelector(".dropbtn");
-    if (toggle) toggle.addEventListener("click", () => {
+    if (toggle && !toggle.hasAttribute("onclick")) toggle.addEventListener("click", () => {
       const menu = document.getElementById("myDropdown");
       if (menu) menu.classList.toggle("show");
     });
