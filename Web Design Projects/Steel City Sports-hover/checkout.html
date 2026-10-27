@@ -1,103 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Checkout</title>
+  <meta name="description" content="Review your Steel City Sports demo shopping cart.">
+  <link rel="stylesheet" href="styles.css">
+  <title>Shopping Cart | Steel City Sports</title>
 </head>
 <body>
- 
-  <div class="dropdown" id="myTopnav">
-    <button class="dropbtn" onclick="toggleMenu()">Menu</button>
-
-
+  <nav class="dropdown" id="myTopnav" aria-label="Main navigation">
+    <button class="dropbtn" type="button" aria-expanded="false" aria-controls="myDropdown">Menu</button>
     <div class="dropdown-content" id="myDropdown">
-      <img src="steel.png" alt="steel-city" />
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="steelers.html">Steelers</a>
-      <a href="pirates.html">Pittsburgh Pirates</a>
-      <a href="penguins.html">The Penguins</a>
-      <a href="riverhounds.html">The RiverHounds</a>
-      <a href="checkout.html"><img src="cart.png" alt="steel-city" /></a>
-      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-        &#9776;
-      </a>
+      <a href="pirates.html">Pirates</a>
+      <a href="penguins.html">Penguins</a>
+      <a href="riverhounds.html">Riverhounds</a>
+      <a href="checkout.html" aria-current="page">Shopping Cart (<span data-cart-count>0</span>)</a>
     </div>
-  </div>
+  </nav>
 
-
-  <div style="padding-left: 16px">
-  <center> 
-    <h2>Shopping Cart</h2>    
-    <table>
-      <tr>
-        <th>Cart</th>
-        <th>Description</th>
-        <th>Size</th>
-        <th>Item Price</th>
-        <th>QTY</th>
-        <th>Total</th>
-      </tr>
-      <tr>
-        <td>
-          <img src="images/steelers.png" class="logo" alt="Steelers Logo" />        </td>
-        <td>Men’s Pittsburgh Steelers TJ Watt Nike Color Rush Jersey</td>
-        <td>M</td>
-        <td>$169.99</td>
-        <td>1</td>
-        <td>$169.99</td>
-      </tr>
-      <tr>
-        <td>      <img src="images/Pirateslogo.png" class="logo" alt="Pirates Logo" />
-        </td>
-        <td>Men’s Pittsburgh Penguins Sidney Crosby Nike Home Jersey</td>
-        <td>M</td>
-        <td>$174.99</td>
-        <td>1</td>
-        <td>$174.99</td>
-      </tr>
-      <tr>
-        <td>      <img src="images/PensLogo.png" class="logo" alt="Penguins Logo" />
-        </td>
-        <td>Men’s Pittsburgh Pirates Andrew McCuthen Nike Home Jersey</td>
-        <td>M</td>
-        <td>$134.99</td>
-        <td>1</td>
-        <td>$134.99</td>
-      </tr>
-      <tr>
-        <td>
-          <img src="images/riverhounds.png" class="logo" alt="Riverhounds Logo" />
-        </td>
-        <td>Men’s Pittsburgh Riverhounds Nike Home Jersey</td>
-        <td>M</td>
-        <td>$90.00</td>
-        <td>1</td>
-        <td>$90.00</td>
-      </tr>
-      <tr>
-        <td colspan="5" style="text-align:right">Total:</td>
-        <td>$569.97</td>
-      </tr>
-    </table>
-
-
-  </div>
-
-  <div id="checkout-button">
-    <a href="payment.html">Payment</a>
-  </div>
-
-</div>
-
-</center>
-
-<script>
-  function toggleMenu() {
-    var dropdown = document.getElementById("myDropdown");
-    dropdown.classList.toggle("show");
-  }
-</script>
-
+  <main class="page-shell">
+    <h1 class="page-heading">Your Shopping Cart</h1>
+    <p class="page-intro">Review your picks from Pittsburgh's teams before continuing.</p>
+    <div class="demo-notice"><strong>Portfolio demo:</strong> This cart is stored in this browser only. No real orders or payments are processed.</div>
+    <p id="cart-empty" class="empty-state" hidden>Your cart is empty. Visit a team page to add some gear.</p>
+    <section id="cart-items" class="cart-items" aria-label="Items in your cart"></section>
+    <section class="cart-summary" aria-label="Order summary">
+      <div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div>
+      <div class="summary-row"><span>Shipping</span><span>Not calculated</span></div>
+      <div class="summary-row summary-total"><span>Estimated total</span><strong id="cart-total">$0.00</strong></div>
+      <p class="page-intro">Shipping and taxes are not included in this demonstration.</p>
+      <div class="cart-actions">
+        <a class="button button-primary" id="checkout-link" href="payment.html">Continue to demo checkout</a>
+        <a class="link-button" href="index.html">Continue shopping</a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
