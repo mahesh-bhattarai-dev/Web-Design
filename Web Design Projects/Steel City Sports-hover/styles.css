@@ -233,3 +233,68 @@ body {
   #checkout-button a:hover {
     background-color: gold;
   }
+
+/* Hover navigation improvements for the Steel City Sports project */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.dropdown .dropbtn {
+  background: #111;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 18px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #222;
+  padding: 12px 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible {
+  background: #f1c40f;
+  color: #111;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content,
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content img {
+  max-width: 34px;
+  max-height: 34px;
+  width: auto;
+  height: auto;
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .dropdown-content {
+    max-width: calc(100vw - 32px);
+  }
+}
