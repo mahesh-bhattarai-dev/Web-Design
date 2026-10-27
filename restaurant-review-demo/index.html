@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive restaurant discovery and review demo built with HTML, CSS, and JavaScript.">
+  <title>TableTalk | Restaurant Reviews</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="TableTalk home"><span class="brand-mark">T</span><span>tabletalk<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#discover">Discover</a>
+      <a href="#reviews">Community reviews</a>
+      <a class="nav-cta" href="#add-review">Write a review <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> GOOD FOOD. HONEST WORDS.</p>
+        <h1>Your next favorite<br>meal starts <em>here.</em></h1>
+        <p class="hero-text">Find neighborhood favorites, discover something new, and share the places worth coming back to.</p>
+        <a class="button button-dark" href="#discover">Explore restaurants <span aria-hidden="true">↓</span></a>
+        <div class="hero-note"><span class="avatar-stack"><b>M</b><b>J</b><b>A</b></span><span>Local flavor, shared by people</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Restaurant table with a meal">
+        <div class="hero-photo"></div>
+        <div class="photo-label"><span class="photo-label-icon">✦</span><span><strong>Good taste travels.</strong><small>Find your next table.</small></span></div>
+        <span class="hero-stamp">MADE FOR<br>FOOD LOVERS</span>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Demo highlights">
+      <div><strong>Local</strong><span>spots to explore</span></div>
+      <div><strong>Real talk</strong><span>reviews that help</span></div>
+      <div><strong>Your voice</strong><span>your next recommendation</span></div>
+    </section>
+
+    <section class="section discover-section" id="discover">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE SHORTLIST</p><h2>Find your kind of place.</h2></div>
+        <p class="section-description">A few sample spots to get the search started.</p>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search restaurants or cuisine..." aria-label="Search restaurants or cuisine"></label>
+        <div class="filter-group" role="group" aria-label="Filter restaurants">
+          <button class="filter-button active" data-filter="All" type="button">All spots</button>
+          <button class="filter-button" data-filter="Cafe" type="button">Cafés</button>
+          <button class="filter-button" data-filter="Greek" type="button">Greek</button>
+          <button class="filter-button" data-filter="Pizza" type="button">Pizza</button>
+        </div>
+      </div>
+      <div class="restaurant-grid" id="restaurant-grid">
+        <article class="restaurant-card" data-name="Main Street Cafe" data-cuisine="Cafe" data-search="Main Street Cafe brunch burgers sandwiches cafe">
+          <div class="restaurant-image image-cafe"><span class="image-tag">ALL-DAY FAVORITE</span><span class="image-symbol">☕</span></div>
+          <div class="restaurant-content"><div class="card-meta"><span class="cuisine-label">CAFÉ · COMFORT FOOD</span><span class="rating">★ 4.5</span></div><h3>Main Street Café</h3><p>Easygoing café classics, from breakfast plates to stacked sandwiches.</p><div class="card-footer"><span>$$ · Casual</span><button class="text-button" data-review="Main Street Café" type="button">Write a review <span>↗</span></button></div></div>
+        </article>
+        <article class="restaurant-card" data-name="Greek House" data-cuisine="Greek" data-search="Greek House Greek Mediterranean pita grilled food">
+          <div class="restaurant-image image-greek"><span class="image-tag">MEDITERRANEAN</span><span class="image-symbol">✳</span></div>
+          <div class="restaurant-content"><div class="card-meta"><span class="cuisine-label">GREEK · MEDITERRANEAN</span><span class="rating">★ 4.0</span></div><h3>Greek House</h3><p>Bright Mediterranean flavors and a relaxed setting for a shared meal.</p><div class="card-footer"><span>$$ · Relaxed</span><button class="text-button" data-review="Greek House" type="button">Write a review <span>↗</span></button></div></div>
+        </article>
+        <article class="restaurant-card" data-name="Corner Slice" data-cuisine="Pizza" data-search="Corner Slice pizza Italian casual dinner">
+          <div class="restaurant-image image-pizza"><span class="image-tag">CASUAL CLASSIC</span><span class="image-symbol">◒</span></div>
+          <div class="restaurant-content"><div class="card-meta"><span class="cuisine-label">PIZZA · ITALIAN-INSPIRED</span><span class="rating">★ 4.8</span></div><h3>Corner Slice</h3><p>A laid-back pizza stop for a quick slice or a no-fuss dinner.</p><div class="card-footer"><span>$ · Casual</span><button class="text-button" data-review="Corner Slice" type="button">Write a review <span>↗</span></button></div></div>
+        </article>
+      </div>
+      <p id="empty-state" class="empty-state" hidden>No matches yet. Try another search or filter.</p>
+      <p class="demo-note">Demo content: restaurant names, descriptions, and sample ratings are illustrative, not verified business listings.</p>
+    </section>
+
+    <section class="community-section" id="reviews">
+      <div class="community-inner">
+        <div><p class="eyebrow">THE COMMUNITY TABLE</p><h2>Every good recommendation<br>has a story.</h2><p class="section-description">Reviews you add in this demo appear here and in your restaurant list during this browser session.</p></div>
+        <div class="review-panel"><div class="review-panel-top"><span class="review-icon">“</span><span class="review-count" id="review-count">2 sample notes</span></div><div id="review-list" class="review-list">
+          <article class="review-item"><div class="review-item-heading"><strong>Alex R.</strong><span class="rating">★★★★★</span></div><p>Friendly service and a relaxed atmosphere. A solid pick when you want something simple.</p><small>Sample community note · Main Street Café</small></article>
+          <article class="review-item"><div class="review-item-heading"><strong>Jamie L.</strong><span class="rating">★★★★☆</span></div><p>Fresh flavors and a nice place to catch up with friends over lunch.</p><small>Sample community note · Greek House</small></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="add-review">
+      <div class="form-intro"><p class="eyebrow">PASS IT ALONG</p><h2>Been somewhere<br><em>good?</em></h2><p>Leave a note for the next person looking for a great meal.</p><div class="form-decoration">✳</div></div>
+      <form id="review-form" class="review-form">
+        <div class="form-row"><label for="reviewer-name">Your name</label><input id="reviewer-name" name="reviewer" type="text" placeholder="e.g. Taylor" required maxlength="40"></div>
+        <div class="form-row"><label for="restaurant-select">Restaurant</label><select id="restaurant-select" name="restaurant" required><option value="">Choose a spot</option><option>Main Street Café</option><option>Greek House</option><option>Corner Slice</option></select></div>
+        <div class="form-row"><label for="review-rating">Your rating</label><select id="review-rating" name="rating" required><option value="5">★★★★★ — Loved it</option><option value="4">★★★★☆ — Really good</option><option value="3">★★★☆☆ — It was okay</option><option value="2">★★☆☆☆ — Not for me</option><option value="1">★☆☆☆☆ — Disappointed</option></select></div>
+        <div class="form-row"><label for="review-details">What should people know?</label><textarea id="review-details" name="details" rows="4" placeholder="Share a helpful detail about the food, service, or atmosphere..." required maxlength="500"></textarea><small class="field-hint">Keep it kind, specific, and useful.</small></div>
+        <button class="button button-dark submit-button" type="submit">Post demo review <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-disclaimer">This is a front-end portfolio demo. Reviews are saved in this browser only; no account, server, or real restaurant database is connected.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">T</span><span>tabletalk<span class="brand-dot">.</span></span></a><p>A small demo built with HTML, CSS & JavaScript.</p><a href="#home">Back to top ↑</a></footer>
+</body>
+</html>
