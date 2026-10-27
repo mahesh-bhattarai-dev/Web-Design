@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review your Steel City Sports demo shopping cart.">
+  <link rel="stylesheet" href="styles.css">
+  <title>Shopping Cart | Steel City Sports</title>
+</head>
+<body>
+  <nav class="dropdown" id="myTopnav" aria-label="Main navigation">
+    <button class="dropbtn" type="button" aria-expanded="false" aria-controls="myDropdown">Menu</button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="index.html">Home</a>
+      <a href="steelers.html">Steelers</a>
+      <a href="pirates.html">Pirates</a>
+      <a href="penguins.html">Penguins</a>
+      <a href="riverhounds.html">Riverhounds</a>
+      <a href="checkout.html" aria-current="page">Shopping Cart (<span data-cart-count>0</span>)</a>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <h1 class="page-heading">Your Shopping Cart</h1>
+    <p class="page-intro">Review your picks from Pittsburgh's teams before continuing.</p>
+    <div class="demo-notice"><strong>Portfolio demo:</strong> This cart is stored in this browser only. No real orders or payments are processed.</div>
+    <p id="cart-empty" class="empty-state" hidden>Your cart is empty. Visit a team page to add some gear.</p>
+    <section id="cart-items" class="cart-items" aria-label="Items in your cart"></section>
+    <section class="cart-summary" aria-label="Order summary">
+      <div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div>
+      <div class="summary-row"><span>Shipping</span><span>Not calculated</span></div>
+      <div class="summary-row summary-total"><span>Estimated total</span><strong id="cart-total">$0.00</strong></div>
+      <p class="page-intro">Shipping and taxes are not included in this demonstration.</p>
+      <div class="cart-actions">
+        <a class="button button-primary" id="checkout-link" href="payment.html">Continue to demo checkout</a>
+        <a class="link-button" href="index.html">Continue shopping</a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

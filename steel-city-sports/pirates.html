@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+  <div class="dropdown" id="myTopnav">
+    <button class="dropbtn" onclick="toggleMenu()">Menu</button>
+    <div class="dropdown-content" id="myDropdown">
+      <img src="steel.png" alt="steel-city" />
+      <a href="index.html" class="active">Home</a>
+      <a href="steelers.html">Steelers</a>
+      <a href="pirates.html">Pittsburgh Pirates</a>
+      <a href="penguins.html">The Penguins</a>
+      <a href="riverhounds.html">The RiverHounds</a>
+      <a href="checkout.html" aria-label="Shopping cart">🛒 <span data-cart-count>0</span></a>
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        &#9776;
+      </a>
+    </div>
+  </div>
+
+<div style="padding-left:16px">
+  <h2><center><b>Steel City Sports - Pittsburgh Pirates</b></center></h2>
+
+  <h3>Product Line</h3>
+  <ul>
+    <li>
+      <h4>Men’s Willie Stargell Mitchell Jersey</h4>
+
+      <img
+              src="images/pirates.jpg"
+              style= "width: 200px; height: 200px"
+              alt="pirates"
+            />
+
+      <p><strong>Product Description:</strong> Sizes from Small to XXL</p>
+      <p><strong>Price:</strong> $80</p>
+    </li>
+    <li>
+      <h4>Women’s Gold Roberto Clemente Jersey</h4>
+      <img
+              src="images/pgh.jpg"
+              style= "width: 200px; height: 200px"
+              alt="pgh"
+            />
+      <p><strong>Product Description:</strong> Sizes range from Small to 2XL</p>
+      <p><strong>Price:</strong> $90</p>
+    </li>
+    <li>
+      <h4>PNC Park T-Shirt</h4>
+      <img
+              src="images/pncpark.jpg"
+              style= "width: 200px; height: 200px"
+              alt="pncpark"
+            />
+      <p><strong>Product Description:</strong> Sizes from Small to XXL</p>
+      <p><strong>Price:</strong> $30</p>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function toggleMenu() {
+    var dropdown = document.getElementById("myDropdown");
+    dropdown.classList.toggle("show");
+  }
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>

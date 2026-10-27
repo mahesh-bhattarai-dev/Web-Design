@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo checkout page for the Steel City Sports student project.">
+  <link rel="stylesheet" href="styles.css">
+  <title>Demo Checkout | Steel City Sports</title>
+</head>
+<body>
+  <nav class="dropdown" id="myTopnav" aria-label="Main navigation">
+    <button class="dropbtn" type="button" aria-expanded="false" aria-controls="myDropdown">Menu</button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="index.html">Home</a>
+      <a href="steelers.html">Steelers</a>
+      <a href="pirates.html">Pirates</a>
+      <a href="penguins.html">Penguins</a>
+      <a href="riverhounds.html">Riverhounds</a>
+      <a href="checkout.html">Shopping Cart (<span data-cart-count>0</span>)</a>
+    </div>
+  </nav>
+  <main class="page-shell">
+    <h1 class="page-heading">Demo Checkout</h1>
+    <p class="page-intro">One final review before the simulated order confirmation.</p>
+    <div class="demo-notice"><strong>Not a real payment page.</strong> Do not enter payment-card details or sensitive personal information. This student project does not accept payments, submit orders to a server, or send form information anywhere.</div>
+    <section class="form-card">
+      <h2>Order summary</h2>
+      <p id="payment-summary" aria-live="polite">Loading cart summary…</p>
+      <form id="demo-order-form">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="demo-name">Name (optional)</label>
+            <input id="demo-name" name="demo-name" autocomplete="name" maxlength="80" placeholder="Demo customer">
+          </div>
+          <div class="form-field">
+            <label for="demo-email">Email (optional)</label>
+            <input id="demo-email" name="demo-email" type="email" autocomplete="email" maxlength="120" placeholder="you@example.com">
+          </div>
+        </div>
+        <p class="page-intro">These optional fields are not transmitted or saved. The form only demonstrates a front-end checkout interaction.</p>
+        <div class="form-actions">
+          <button class="button button-primary" type="submit">Simulate demo order</button>
+        </div>
+      </form>
+      <div id="order-result" class="order-result" role="status" hidden></div>
+      <div class="cart-actions"><a class="link-button" href="checkout.html">Back to cart</a><a class="link-button" href="index.html">Continue shopping</a></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

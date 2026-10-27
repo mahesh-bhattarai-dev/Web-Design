@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <style>
+    /* Additional CSS for image and text consistency */
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .product {
+      flex: 0 0 calc(50% - 20px);
+      margin: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .product img.logo {
+      width: auto;
+      height: 150px; /* Adjust height as needed for consistency */
+    }
+  </style>
+</head>
+<body>
+
+<div class="dropdown" id="myTopnav">
+  <button class="dropbtn" onclick="toggleMenu()">Menu</button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="#welcome-message" class="active">Home</a>
+    <a href="steelers.html">Steelers</a>
+    <a href="pirates.html">Pittsburgh Pirates</a>
+    <a href="penguins.html">The Penguins</a>
+    <a href="riverhounds.html">The RiverHounds</a>
+    <a href="checkout.html" aria-label="Shopping cart">🛒 <span data-cart-count>0</span></a>
+  </div>
+</div>
+
+<div style="padding-left: 16px">
+  <h2 id="welcome-message">Welcome to Steel City Sports</h2>
+  <p>Welcome to Steel City Sports - your one-stop destination for authentic
+    merchandise representing Pittsburgh's beloved sports teams! Dive into
+    our extensive collection featuring gear for the Penguins, Steelers,
+    Pirates, and RiverHounds. Show your pride for your favorite Pittsburgh
+    teams with top-quality apparel and accessories. Join the Steel City
+    spirit and gear up to support your teams in style!
+  </p>
+
+  <div class="product-container">
+    <div class="product">
+      <h3>Steelers</h3>
+      <p>Gear up like a true champion with our exclusive Pittsburgh Steelers merchandise! Show your black and gold pride by representing the NFL's best franchise. 
+      Join the Steelers Nation and elevate your game day experience with our premium quality gear!</p>
+      <img src="images/Steelerslogo.png" class="logo" alt="Steelers Logo" />
+    </div>
+
+    <div class="product">
+      <h3>Pittsburgh Pirates</h3>
+      <p>Embrace the timeless tradition of Pittsburgh Pirates baseball with our premier collection of merchandise! Celebrate the rich history of this iconic MLB franchise in style. 
+      Show your support for the Pirates wherever you go and let your passion for baseball shine bright!</p>
+      <img src="images/Pirateslogo.png" class="logo" alt="Pirates Logo" />
+    </div>
+
+    <div class="product">
+      <h3>Pittsburgh Penguins</h3>
+      <p>Experience the thrill of hockey with our electrifying Pittsburgh Penguins merchandise!
+      Deck yourself out in the iconic black and gold! From jerseys to collectibles, 
+      gear up to roar with the Penguins and dominate the ice in true championship fashion!</p>
+      <img src="images/PensLogo.png" class="logo" alt="Penguins Logo" />
+    </div>
+
+    <div class="product">
+      <h3>Pittsburgh Riverhounds</h3>
+      <p>Dive into the excitement of soccer with our amazing Pittsburgh Riverhounds gear! Show your support for Pittsburgh’s newest professional soccer team! Join the RiverHounds faithful!</p>
+      <img src="images/riverhounds.png" class="logo" alt="Riverhounds Logo" />
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  var dropdown = document.getElementById("myDropdown");
+  dropdown.classList.toggle("show");
+}
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
