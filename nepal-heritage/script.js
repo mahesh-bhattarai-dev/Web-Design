@@ -12,14 +12,10 @@ document.querySelectorAll('.year').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
 
-/*
- * Progressive disclosure: keep a short introduction visible and let visitors
- * expand the details they want to read. Native <details> keeps this keyboard-
- * accessible and works without a framework.
- */
+/* Progressive disclosure: show a short introduction and expand the full story. */
 const page = document.querySelector('.nav-links a.active')?.getAttribute('href') || '';
 
-function makeCardExpandable(card, label = 'Read more') {
+function makeCardExpandable(card, label = 'Read the story') {
   if (!card || card.querySelector(':scope > .card-body > details')) return;
   const body = card.querySelector('.card-body');
   if (!body) return;
@@ -27,21 +23,17 @@ function makeCardExpandable(card, label = 'Read more') {
   const children = Array.from(body.children);
   let summaryIndex = -1;
   let foundHeading = false;
-  let foundSummary = false;
 
   for (let i = 0; i < children.length; i += 1) {
     const node = children[i];
     if (/^H[1-6]$/.test(node.tagName)) foundHeading = true;
     if (foundHeading && node.tagName === 'P' && !node.classList.contains('eyebrow')) {
       summaryIndex = i;
-      foundSummary = true;
       break;
     }
   }
-  if (!foundSummary) return;
 
-  const remaining = children.slice(summaryIndex + 1);
-  if (!remaining.length) return;
+  if (summaryIndex < 0 || children.length <= summaryIndex + 1) return;
 
   const details = document.createElement('details');
   details.className = 'card-details';
@@ -49,42 +41,13 @@ function makeCardExpandable(card, label = 'Read more') {
   summary.textContent = label;
   details.appendChild(summary);
 
-  remaining.forEach((node) => details.appendChild(node));
+  children.slice(summaryIndex + 1).forEach((node) => details.appendChild(node));
   body.appendChild(details);
 }
 
-if (page === 'festivals.html' || page === 'rituals.html') {
+if (['festivals.html', 'rituals.html', 'places.html', 'food.html'].includes(page)) {
   document.querySelectorAll('main .cards > article.card').forEach((card) => {
     makeCardExpandable(card, 'Read the story');
-  });
-}
-
-if (page === 'food.html') {
-  document.querySelectorAll('main .destination-group').forEach((section) => {
-    const heading = section.querySelector(':scope > h2, :scope > .section-heading');
-    const content = Array.from(section.children).filter((node) => node !== heading && !node.classList.contains('eyebrow') && !node.classList.contains('group-intro'));
-    if (!content.length) return;
-    const details = document.createElement('details');
-    details.className = 'section-details';
-    const summary = document.createElement('summary');
-    summary.textContent = 'Explore this category';
-    details.appendChild(summary);
-    content.forEach((node) => details.appendChild(node));
-    section.appendChild(details);
-  });
-}
-
-if (page === 'places.html') {
-  document.querySelectorAll('main .destination-group').forEach((section) => {
-    const content = Array.from(section.children).filter((node) => !node.classList.contains('section-heading') && !node.classList.contains('eyebrow') && !node.classList.contains('group-intro'));
-    if (!content.length) return;
-    const details = document.createElement('details');
-    details.className = 'section-details';
-    const summary = document.createElement('summary');
-    summary.textContent = 'Explore places';
-    details.appendChild(summary);
-    content.forEach((node) => details.appendChild(node));
-    section.appendChild(details);
   });
 }
 
