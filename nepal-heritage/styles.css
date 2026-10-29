@@ -96,3 +96,46 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #75
     padding: 24px 20px;
   }
 }
+
+
+/* Shared content grid: section headings start at the same gutter as hero copy */
+.intro,
+.section-heading {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+.intro {
+  margin-top: 0;
+  margin-bottom: 42px;
+}
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+.intro h2,
+.section-heading h2 {
+  margin-left: 0;
+  margin-right: 0;
+}
+.intro > p:not(.eyebrow),
+.section-heading > p:not(.eyebrow) {
+  max-width: 760px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.destination-group > .section-heading {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 16px;
+}
+@media (max-width: 700px) {
+  .intro {
+    margin-bottom: 34px;
+  }
+  .section-heading {
+    margin-bottom: 26px;
+  }
+}
