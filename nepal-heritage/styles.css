@@ -245,3 +245,39 @@ main > #explore .section-heading {
     max-width: 100%;
   }
 }
+
+
+/* Homepage alignment correction: the welcome block must use the same left edge
+   as the hero copy and Explore heading, not a centered intro layout. */
+main > section.intro.section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: left;
+}
+main > section.intro.section > .eyebrow,
+main > section.intro.section > h2,
+main > section.intro.section > p:not(.eyebrow) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 760px;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  main > section.intro.section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  main > section.intro.section > .eyebrow,
+  main > section.intro.section > h2,
+  main > section.intro.section > p:not(.eyebrow) {
+    max-width: 100%;
+  }
+}
