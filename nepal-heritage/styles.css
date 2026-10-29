@@ -139,3 +139,56 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #75
     margin-bottom: 26px;
   }
 }
+
+
+/* Final shared text-block alignment across every page */
+:root {
+  --content-text-width: 760px;
+}
+.intro,
+.section-heading {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+.intro > .eyebrow,
+.section-heading > .eyebrow,
+.intro > h2,
+.section-heading > h2,
+.intro > p:not(.eyebrow),
+.section-heading > p:not(.eyebrow) {
+  width: 100%;
+  max-width: var(--content-text-width);
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+.intro > .eyebrow,
+.section-heading > .eyebrow {
+  margin-bottom: 8px;
+}
+.intro > h2,
+.section-heading > h2 {
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+.intro > p:not(.eyebrow),
+.section-heading > p:not(.eyebrow) {
+  margin-top: 10px;
+}
+.destination-group > .section-heading {
+  width: 100%;
+  max-width: none;
+}
+.destination-group > .section-heading > .eyebrow,
+.destination-group > .section-heading > h2,
+.destination-group > .section-heading > p:not(.eyebrow) {
+  max-width: var(--content-text-width);
+}
+@media (max-width: 700px) {
+  :root {
+    --content-text-width: 100%;
+  }
+}
