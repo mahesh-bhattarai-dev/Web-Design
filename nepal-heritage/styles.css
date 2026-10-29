@@ -41,3 +41,58 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #75
 @keyframes reveal{from{opacity:.45;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:700px){.card img{height:205px}.card-body{padding:19px}.section-details summary{width:100%;justify-content:space-between}.feature-panel{margin-top:38px}}
 @media(prefers-reduced-motion:reduce){.card,.card-details summary::after,.section-details summary::after{transition:none}.card-details>*:not(summary),.section-details>*:not(summary){animation:none}}
+
+
+/* Consistent page alignment and quieter card content */
+.intro,
+.section-heading,
+.closing {
+  text-align: left;
+}
+.intro {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 42px;
+}
+.section-heading {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 32px;
+}
+.section-heading > p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 10px 0 0;
+}
+.destination-group > .section-heading {
+  max-width: none;
+  margin: 0 0 16px;
+}
+.destination-group .group-intro {
+  max-width: 850px;
+  margin: 0 0 18px;
+}
+.closing {
+  padding: 32px;
+}
+.closing > p:not(.eyebrow) {
+  max-width: 800px;
+  margin: 12px 0;
+}
+.card-body {
+  padding: 24px;
+  text-align: left;
+}
+.tags {
+  display: none !important;
+}
+.feature-panel {
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .card-body {
+    padding: 20px;
+  }
+  .closing {
+    padding: 24px 20px;
+  }
+}
