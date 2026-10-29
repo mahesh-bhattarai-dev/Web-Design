@@ -192,3 +192,56 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #75
     --content-text-width: 100%;
   }
 }
+
+
+/* Homepage: apply the same text-block grid used on the inner pages */
+.home-hero .hero-copy > .eyebrow,
+.home-hero .hero-copy > h1,
+.home-hero .hero-copy > p:not(.eyebrow) {
+  width: 100%;
+  max-width: var(--content-text-width, 760px);
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+.home-hero .hero-copy > p:not(.eyebrow) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+main > .intro.section {
+  width: 100%;
+  max-width: 1180px;
+  text-align: left;
+}
+main > .intro.section > .eyebrow,
+main > .intro.section > h2,
+main > .intro.section > p:not(.eyebrow),
+main > #explore .section-heading > .eyebrow,
+main > #explore .section-heading > h2,
+main > #explore .section-heading > p:not(.eyebrow) {
+  width: 100%;
+  max-width: var(--content-text-width, 760px);
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+main > .intro.section > p:not(.eyebrow) {
+  margin-top: 10px;
+}
+main > #explore .section-heading {
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (max-width: 700px) {
+  .home-hero .hero-copy > .eyebrow,
+  .home-hero .hero-copy > h1,
+  .home-hero .hero-copy > p:not(.eyebrow),
+  main > .intro.section > .eyebrow,
+  main > .intro.section > h2,
+  main > .intro.section > p:not(.eyebrow),
+  main > #explore .section-heading > .eyebrow,
+  main > #explore .section-heading > h2,
+  main > #explore .section-heading > p:not(.eyebrow) {
+    max-width: 100%;
+  }
+}
