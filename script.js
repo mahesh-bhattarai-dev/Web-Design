@@ -1,5 +1,5 @@
 const lessons = {
- html:{title:"HTML · A simple page",heading:"Your first HTML page",description:"HTML gives a webpage its structure. Elements such as headings and paragraphs tell the browser what each piece of content represents.",tip:"Most HTML elements have an opening tag, content, and a closing tag.",code:`<!DOCTYPE html>
+ html:{source:"HTML/first.html",title:"HTML · A simple page",heading:"Your first HTML page",description:"HTML gives a webpage its structure. Elements such as headings and paragraphs tell the browser what each piece of content represents.",tip:"Most HTML elements have an opening tag, content, and a closing tag.",code:`<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>My First Page</title>
@@ -10,7 +10,7 @@ const lessons = {
   <a href="https://www.nasa.gov/">Visit NASA</a>
 </body>
 </html>`,kind:"html",note:"This example is based on the introductory HTML files in your repository."},
- css:{title:"CSS · Styling a card",heading:"Give a page its style",description:"CSS controls how HTML elements look. Selectors target elements, while properties define colors, spacing, borders, and layout.",tip:"The box model includes content, padding, border, and margin.",code:`.profile-card {
+ css:{source:"CSS/BoxModel.html",title:"CSS · Styling a card",heading:"Give a page its style",description:"CSS controls how HTML elements look. Selectors target elements, while properties define colors, spacing, borders, and layout.",tip:"The box model includes content, padding, border, and margin.",code:`.profile-card {
   background: #f1f5ff;
   border: 1px solid #dce6fb;
   border-radius: 12px;
@@ -22,24 +22,24 @@ const lessons = {
   color: #315fbd;
   margin-top: 0;
 }`,kind:"css"},
- javascript:{title:"JavaScript · A button click",heading:"Make a page interactive",description:"JavaScript can respond to user actions, update page content, and work with data. This example changes a message when the button is clicked.",tip:"Use addEventListener() to respond to events without putting JavaScript directly in HTML.",code:`const button = document.querySelector("#helloButton");
+ javascript:{source:"Javascript/Basics/helloWorld.js",title:"JavaScript · A button click",heading:"Make a page interactive",description:"JavaScript can respond to user actions, update page content, and work with data. This example changes a message when the button is clicked.",tip:"Use addEventListener() to respond to events without putting JavaScript directly in HTML.",code:`const button = document.querySelector("#helloButton");
 const message = document.querySelector("#message");
 
 button.addEventListener("click", () => {
   message.textContent = "Hello! JavaScript is working.";
 });`,kind:"js"},
- bootstrap:{title:"Bootstrap · Responsive grid",heading:"Build with a grid",description:"Bootstrap provides a responsive grid system and reusable interface components. Its columns adjust based on the screen size.",tip:"A .container holds the layout, .row groups columns, and .col-md-4 creates three columns on medium screens and larger.",code:`<div class="container">
+ bootstrap:{source:"Bootstrap/",title:"Bootstrap · Responsive grid",heading:"Build with a grid",description:"Bootstrap provides a responsive grid system and reusable interface components. Its columns adjust based on the screen size.",tip:"A .container holds the layout, .row groups columns, and .col-md-4 creates three columns on medium screens and larger.",code:`<div class="container">
   <div class="row">
     <div class="col-md-4">Column one</div>
     <div class="col-md-4">Column two</div>
     <div class="col-md-4">Column three</div>
   </div>
 </div>`,kind:"bootstrap"},
- sql:{title:"SQL · Select records",heading:"Ask a database a question",description:"SQL is used to define, add, and retrieve data in relational databases. This query selects songs from a sample song table.",tip:"The table below is a visual simulation based on sample records in your SQL folder. It is not connected to a live database.",code:`SELECT title, artist, release_year
+ sql:{source:"SQL/CREATE_table_song.sql",title:"SQL · Select records",heading:"Ask a database a question",description:"SQL is used to define, add, and retrieve data in relational databases. This query selects songs from a sample song table.",tip:"The table below is a visual simulation based on sample records in your SQL folder. It is not connected to a live database.",code:`SELECT title, artist, release_year
 FROM song
 WHERE genre = 'grunge'
 ORDER BY release_year;`,kind:"sql",note:"Simulated query result · based on your CREATE TABLE and INSERT examples."},
- node:{title:"Node.js · Basic server",heading:"JavaScript beyond the browser",description:"Node.js lets JavaScript run outside a web browser. It can be used to build command-line tools, servers, and backend services.",tip:"This is a simplified teaching example. A real server needs to be run with Node.js.",code:`const http = require("http");
+ node:{source:"NodeJS/server.js",title:"Node.js · Basic server",heading:"JavaScript beyond the browser",description:"Node.js lets JavaScript run outside a web browser. It can be used to build command-line tools, servers, and backend services.",tip:"This is a simplified teaching example. A real server needs to be run with Node.js.",code:`const http = require("http");
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
@@ -47,7 +47,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000);`,kind:"node"},
- jquery:{title:"jQuery · Select and update",heading:"A shorter way to work with the DOM",description:"jQuery is a JavaScript library that makes common DOM tasks and event handling concise.",tip:"The $() function is used to select elements. This sample assumes the jQuery library is included in the page.",code:`$("#showMessage").on("click", function () {
+ jquery:{source:"jquery/startJquery.html",title:"jQuery · Select and update",heading:"A shorter way to work with the DOM",description:"jQuery is a JavaScript library that makes common DOM tasks and event handling concise.",tip:"The $() function is used to select elements. This sample assumes the jQuery library is included in the page.",code:`$("#showMessage").on("click", function () {
   $("#message").text("The message was updated!");
 });`,kind:"jquery"}
 };
@@ -58,7 +58,7 @@ const codePanel=$("#codePanel"),resultPanel=$("#resultPanel");
 function escapeHTML(value){return value.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function showLesson(key){
  current=key; const item=lessons[key];
- $("#exampleTitle").textContent=item.title;$("#lessonHeading").textContent=item.heading;
+ $("#exampleTitle").textContent=item.title;$("#sourceLink").href=item.source||"README.md";$("#lessonHeading").textContent=item.heading;
  $("#lessonDescription").textContent=item.description;$("#lessonTip").textContent=item.tip;
  codePanel.querySelector("code").textContent=item.code;codePanel.classList.remove("hidden");resultPanel.classList.add("hidden");
  $("#codeTab").classList.add("active");$("#resultTab").classList.remove("active");
