@@ -9,7 +9,7 @@ const dishes=[
 [8,"Onion Pakora","Snacks",6.50,"Onion fritters coated in spiced chickpea batter.","https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"],
 [9,"Garlic Naan (2 pcs)","Indian",3.99,"Soft tandoor-baked flatbread brushed with garlic.","https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=700&q=80"],
 [10,"Chicken Momo (6 pcs)","Nepali",9.99,"Nepali-style dumplings served with tangy tomato achar.","https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=700&q=80"],
-[11,"Dessert Special","Drinks",4.50,"A rotating sweet treat to finish your meal.","https://images.unsplash.com/photo-1551024506-0BECf828d307?auto=format&fit=crop&w=700&q=80"],
+[11,"Dessert Special","Drinks",4.50,"A rotating sweet treat to finish your meal.","https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=80"],
 [12,"Dal Bhat Set","Nepali",13.99,"Rice, lentil soup, seasonal tarkari and achar.","https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80"],
 [13,"Nepali Thali","Nepali",16.99,"A generous platter inspired by the everyday flavors of Nepal.","https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80"],
 [14,"Dhido, Gundruk & Achar","Nepali",14.99,"A traditional-style set with dhido, fermented greens and spicy achar.","https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80"],
